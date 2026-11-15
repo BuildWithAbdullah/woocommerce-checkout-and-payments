@@ -1,0 +1,25 @@
+<!-- Three methods, three groups, so two of them can be chosen at once. -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+  <fieldset class="payment_methods">
+    <legend>Payment</legend>
+    <p>
+      <input type="radio" name="payment_method_card" id="pm_card" value="card">
+      <label for="pm_card">Card</label>
+    </p>
+    <p>
+      <input type="radio" name="payment_method_paypal" id="pm_paypal" value="paypal">
+      <label for="pm_paypal">PayPal</label>
+    </p>
+    <p>
+      <input type="radio" name="payment_method_bacs" id="pm_bacs" value="bacs">
+      <label for="pm_bacs">Direct bank transfer</label>
+    </p>
+  </fieldset>
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- A card number field with no autofill token, which means typing sixteen
+     digits by hand on a phone. -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+  <fieldset class="payment_methods">
+    <legend>Payment</legend>
+    <p>
+      <input type="radio" name="payment_method" id="pm_card" value="card" checked>
+      <label for="pm_card">Card</label>
+    </p>
+  </fieldset>
+  <div class="payment_box" id="pm_card_box" tabindex="-1" aria-label="Card details">
+    <p class="form-row">
+      <label for="card_number">Card number</label>
+      <input type="text" id="card_number" name="card_number" inputmode="numeric">
+    </p>
+    <p class="form-row">
+      <label for="card_expiry">Expiry date</label>
+      <input type="text" id="card_expiry" name="card_expiry" autocomplete="cc-exp">
+    </p>
+  </div>
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>
