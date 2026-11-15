@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+
+  <fieldset class="payment_methods">
+    <legend>Payment</legend>
+
+    <p>
+      <input type="radio" name="payment_method" id="payment_method_card" value="card"
+             aria-controls="payment-box-card" checked>
+      <label for="payment_method_card">Card</label>
+    </p>
+    <p>
+      <input type="radio" name="payment_method" id="payment_method_paypal" value="paypal"
+             aria-controls="payment-box-paypal">
+      <label for="payment_method_paypal">PayPal</label>
+    </p>
+    <p>
+      <input type="radio" name="payment_method" id="payment_method_bacs" value="bacs"
+             aria-controls="payment-box-bacs">
+      <label for="payment_method_bacs">Direct bank transfer</label>
+    </p>
+  </fieldset>
+
+  <div class="payment_box" id="payment-box-card" tabindex="-1" aria-labelledby="payment_method_card_label">
+    <h4 id="payment_method_card_label">Card details</h4>
+    <p>Your card details are collected by our payment provider.</p>
+    <p class="form-row">
+      <label for="card_name">Name on card</label>
+      <input type="text" id="card_name" name="card_name" autocomplete="cc-name">
+    </p>
+  </div>
+
+  <p class="form-row terms">
+    <label for="terms">
+      <input type="checkbox" name="terms" id="terms">
+      I have read and agree to the website terms and conditions, which cover delivery
+      windows, returns and how we handle your details.
+    </label>
+  </p>
+
+  <button type="submit" class="button alt" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

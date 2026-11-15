@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+
+  <fieldset class="payment_methods">
+    <legend>Payment</legend>
+    <p>
+      <input type="radio" name="payment_method" id="payment_method_card" value="card"
+             aria-controls="card-panel" checked>
+      <label for="payment_method_card">Card</label>
+    </p>
+  </fieldset>
+
+  <div class="payment_box" id="card-panel" tabindex="-1" aria-labelledby="card-panel-heading">
+    <h4 id="card-panel-heading">Card details</h4>
+
+    <iframe src="https://js.stripe.com/v3/elements-inner-card.html" class="card-number-frame"
+            title="Card number"></iframe>
+
+    <iframe src="https://js.stripe.com/v3/elements-inner-cvc.html" class="card-cvc-frame"
+            title="Security code"></iframe>
+  </div>
+
+  <div class="saved-cards">
+    <p class="saved-card">
+      <input type="radio" name="wc-card-payment-token" id="token_1" value="1">
+      <label for="token_1"><img src="/img/visa.svg" alt="Visa"> Visa ending 4242, expires 03/29</label>
+    </p>
+    <p class="saved-card">
+      <input type="radio" name="wc-card-payment-token" id="token_2" value="2">
+      <label for="token_2"><img src="/img/mastercard.svg" alt="Mastercard"> Mastercard ending 5454, expires 11/28</label>
+    </p>
+  </div>
+
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

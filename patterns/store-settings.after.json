@@ -1,0 +1,54 @@
+{
+  "description": "The same store, with tax taken from where the goods go and a zone that covers everyone else.",
+  "sells_digital_goods": true,
+  "tax": {
+    "based_on": "shipping",
+    "prices_include_tax": true,
+    "digital_tax_location": "customer",
+    "zero_rate_handling": "zero_rate",
+    "rounding": "per_total"
+  },
+  "shipping": {
+    "classes": ["bulky", "fragile", "letter"],
+    "free_shipping": {
+      "min_amount": 50,
+      "before_discount": false
+    },
+    "zones": [
+      {
+        "name": "United Kingdom",
+        "regions": ["GB"],
+        "methods": [
+          {
+            "type": "flat_rate",
+            "calculation_type": "class",
+            "class_costs": { "bulky": 12, "fragile": 8, "letter": 2 }
+          }
+        ]
+      },
+      {
+        "name": "Europe",
+        "regions": ["EU"],
+        "methods": [
+          {
+            "type": "flat_rate",
+            "calculation_type": "class",
+            "class_costs": { "bulky": 24, "fragile": 16, "letter": 4 }
+          }
+        ]
+      },
+      {
+        "name": "Everywhere else",
+        "rest_of_world": true,
+        "regions": ["*"],
+        "methods": [
+          {
+            "type": "flat_rate",
+            "calculation_type": "class",
+            "class_costs": { "bulky": 60, "fragile": 40, "letter": 12 }
+          }
+        ]
+      }
+    ]
+  }
+}

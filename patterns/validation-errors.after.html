@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+
+  <div class="woocommerce-error" id="checkout-errors" role="alert" tabindex="-1">
+    <h2>Three things need your attention</h2>
+    <ul>
+      <li><a href="#billing_postcode">Enter a postcode we can deliver to.</a></li>
+      <li><a href="#billing_email">That email address is not complete.</a></li>
+      <li><a href="#billing_phone">We need a number for the courier.</a></li>
+    </ul>
+  </div>
+
+  <p class="form-row">
+    <label for="billing_postcode">Postcode</label>
+    <input type="text" id="billing_postcode" name="billing_postcode" autocomplete="postal-code"
+           aria-describedby="billing_postcode_error" aria-invalid="true" value="SW1A">
+    <span class="field-error" id="billing_postcode_error">Enter a postcode we can deliver to.</span>
+  </p>
+
+  <p class="form-row">
+    <label for="billing_email">Email address</label>
+    <input type="email" id="billing_email" name="billing_email" autocomplete="email"
+           aria-describedby="billing_email_error" aria-invalid="true" value="sam@">
+    <span class="field-error" id="billing_email_error">That email address is not complete.</span>
+  </p>
+
+  <p class="form-row">
+    <label for="billing_phone">Phone</label>
+    <input type="tel" id="billing_phone" name="billing_phone" autocomplete="tel"
+           aria-describedby="billing_phone_error" aria-invalid="true">
+    <span class="field-error" id="billing_phone_error">We need a number for the courier.</span>
+  </p>
+
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

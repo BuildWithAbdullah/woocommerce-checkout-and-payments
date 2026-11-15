@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+
+  <p class="form-row">
+    <label for="billing_postcode">Postcode</label>
+    <input type="text" id="billing_postcode" name="billing_postcode" autocomplete="postal-code" value="SW1A">
+    <span class="field-error" id="billing_postcode_error">Enter a postcode we can deliver to.</span>
+  </p>
+
+  <p class="form-row">
+    <label for="billing_email">Email address</label>
+    <input type="email" id="billing_email" name="billing_email" autocomplete="email"
+           aria-describedby="billing_email_error" value="sam@">
+    <span class="field-error" id="billing_email_error">That email address is not complete.</span>
+  </p>
+
+  <p class="form-row">
+    <label for="billing_phone">Phone</label>
+    <input type="tel" id="billing_phone" name="billing_phone" autocomplete="tel">
+    <span class="field-error">We need a number for the courier.</span>
+  </p>
+
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

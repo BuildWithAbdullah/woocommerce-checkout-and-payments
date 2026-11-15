@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks-style.css">
+  <script src="/wp-content/plugins/acme-checkout/acme-checkout.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <header>
+    <a class="cart-contents" href="/cart/">
+      Basket <span class="cart-contents-count"></span>
+    </a>
+  </header>
+
+  <form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+    <div class="woocommerce-billing-fields">
+      <p class="form-row">
+        <label for="billing_country">Country</label>
+        <select id="billing_country" name="billing_country" autocomplete="country">
+          <option value="GB">United Kingdom</option>
+        </select>
+      </p>
+    </div>
+
+    <fieldset class="payment_methods">
+      <legend>Payment</legend>
+      <p>
+        <input type="radio" name="payment_method" id="payment_method_paypal" value="paypal" checked>
+        <label for="payment_method_paypal">PayPal</label>
+      </p>
+      <p>
+        <input type="radio" name="payment_method" id="payment_method_bacs" value="bacs">
+        <label for="payment_method_bacs">Direct bank transfer</label>
+      </p>
+    </fieldset>
+
+    <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+  </form>
+</body>
+</html>

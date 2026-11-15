@@ -1,0 +1,42 @@
+{
+  "description": "A store selling physical and downloadable goods from one catalogue.",
+  "sells_digital_goods": true,
+  "tax": {
+    "based_on": "billing",
+    "prices_include_tax": true,
+    "digital_tax_location": "base",
+    "zero_rate_handling": "exempt",
+    "rounding": "per_line"
+  },
+  "shipping": {
+    "classes": ["bulky", "fragile", "letter"],
+    "free_shipping": {
+      "min_amount": 50,
+      "before_discount": true
+    },
+    "zones": [
+      {
+        "name": "United Kingdom",
+        "regions": ["GB"],
+        "methods": [
+          {
+            "type": "flat_rate",
+            "calculation_type": "order",
+            "class_costs": { "bulky": 12, "fragile": 8, "letter": 2 }
+          }
+        ]
+      },
+      {
+        "name": "Europe",
+        "regions": ["EU"],
+        "methods": [
+          {
+            "type": "flat_rate",
+            "calculation_type": "class",
+            "class_costs": { "bulky": 24, "fragile": 16, "letter": 4 }
+          }
+        ]
+      }
+    ]
+  }
+}
