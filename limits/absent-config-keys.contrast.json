@@ -1,0 +1,6 @@
+{
+  "description": "The same shape with one key filled in, and wrong.",
+  "sells_digital_goods": true,
+  "tax": { "digital_tax_location": "base" },
+  "shipping": { "zones": [] }
+}

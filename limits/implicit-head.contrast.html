@@ -1,0 +1,18 @@
+<!-- The same script with the head element written out, which is reported. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+  <script src="/wp-content/plugins/acme-checkout/acme-checkout.js"></script>
+</head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+  <p class="form-row">
+    <label for="billing_city">Town or city</label>
+    <input type="text" id="billing_city" name="billing_city" autocomplete="address-level2">
+  </p>
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- The asterisk is drawn by a stylesheet rule on .required::after. There is
+     nothing in the markup to read, so this field is reported as fine. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><title>Checkout</title>
+  <style>.form-row.required label::after { content: " *"; color: #b00; }</style>
+</head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+  <p class="form-row required">
+    <label for="billing_city">Town or city</label>
+    <input type="text" id="billing_city" name="billing_city" autocomplete="address-level2">
+  </p>
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>

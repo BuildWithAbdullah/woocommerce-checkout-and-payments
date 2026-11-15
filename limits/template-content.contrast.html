@@ -1,0 +1,14 @@
+<!-- The same page with the template taken out, which is reported as fine. -->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout</title></head>
+<body>
+<form name="checkout" class="checkout woocommerce-checkout" method="post" action="/checkout/">
+  <p class="form-row">
+    <label for="billing_city">Town or city</label>
+    <input type="text" id="billing_city" name="billing_city" autocomplete="address-level2">
+  </p>
+  <button type="submit" name="woocommerce_checkout_place_order">Place order</button>
+</form>
+</body>
+</html>
