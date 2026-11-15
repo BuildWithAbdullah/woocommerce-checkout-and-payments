@@ -1,0 +1,50 @@
+{
+  "name": "woocommerce-checkout-and-payments",
+  "version": "1.0.0",
+  "description": "Checkout accessibility, payment gateway failure modes, tax and shipping edge cases and cart fragment load cost for WooCommerce, catalogued one finding per reason and driven by tests.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Abdullah Shabbir",
+  "bin": {
+    "woo-check": "bin/woo-check.mjs"
+  },
+  "exports": {
+    ".": "./src/run.mjs",
+    "./catalogue": "./src/catalogue.mjs",
+    "./limits": "./src/limits.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "patterns",
+    "fixtures",
+    "limits",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "scripts": {
+    "test": "node --test test/html.test.mjs test/php.test.mjs test/a11y.test.mjs test/run.test.mjs test/cli.test.mjs test/files.test.mjs test/catalogue.test.mjs test/checkout-form.test.mjs test/payment-methods.test.mjs test/gateway-failures.test.mjs test/tax-and-shipping.test.mjs test/cart-fragments.test.mjs test/script-footprint.test.mjs test/order-flow.test.mjs test/coupons-and-prices.test.mjs test/pairs.test.mjs test/fixtures.test.mjs test/limits.test.mjs test/tools.test.mjs test/tracked.test.mjs test/verify.test.mjs test/purity.test.mjs",
+    "count": "node tools/count-tests.mjs",
+    "verify": "node tools/verify.mjs",
+    "exit-codes": "node tools/exit-codes.mjs",
+    "verdicts": "node tools/audit-verdicts.mjs",
+    "entry": "node tools/entry-thin.mjs",
+    "docs": "node tools/catalogue-doc.mjs && node tools/limits-doc.mjs",
+    "docs:check": "node tools/catalogue-doc.mjs --check && node tools/limits-doc.mjs --check"
+  },
+  "keywords": [
+    "woocommerce",
+    "wordpress",
+    "checkout",
+    "payments",
+    "accessibility",
+    "tax",
+    "shipping",
+    "performance",
+    "ecommerce"
+  ]
+}
